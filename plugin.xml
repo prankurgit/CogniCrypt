@@ -26,5 +26,27 @@
          </action>
       </actionSet>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="code-clafer_configurator.objectContribution"
+            objectClass="org.eclipse.core.resources.IResource">
+         <menu
+               icon="icons/cognicrypt.png"
+               id="code-clafer_configurator.menu1"
+               label="CogniCrypt">
+            <separator
+                  name="code-clafer_configurator.separator1">
+            </separator>
+         </menu>
+         <action
+               class="crossing.e1.configurator.actions.WizardAction"
+               icon="icons/cognicrypt.png"
+               id="code-clafer_configurator.action1"
+               label="CogniCrypt">
+         </action>
+      </objectContribution>
+   </extension>
 
 </plugin>
