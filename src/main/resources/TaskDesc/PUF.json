@@ -1,0 +1,35 @@
+[
+		{
+			"id" : "0",
+			"questionText":"Do you want to evaluate PUF response from a single device?",
+			"answers":[
+				{"value":"Yes",
+				"claferDependencies":[
+				{"algorithm": "algo", "operand":"devices", "value":"single", "operator":"="}
+				],"defaultAnswer": true,"nextID" : "1" 
+				},
+				{"value":"No",
+				"claferDependencies":[
+				{"algorithm": "algo", "operand":"devices", "value":"multiple", "operator":"="},
+				{"algorithm": "algo", "operand":"mode", "value":"folder", "operator":"="}
+				],"nextID" : "-1"
+			}
+			]
+		},
+		{
+			"id" : "1",
+			"questionText":"Do you want to evaluate single or multiple PUF responses?",
+			"answers":[
+				{"value":"single response",
+				"claferDependencies":[
+				{"algorithm": "algo", "operand":"mode", "value":"file", "operator":"="}
+                ],"defaultAnswer": true, "nextID" : "-1"
+				},
+				{"value":"multiple response",
+				"claferDependencies":[
+				{"algorithm": "algo", "operand":"mode", "value":"folder", "operator":"="}
+				],"nextID" : "-1"
+			}
+            ]
+        }
+]
