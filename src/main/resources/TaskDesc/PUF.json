@@ -5,13 +5,13 @@
 			"answers":[
 				{"value":"Yes",
 				"claferDependencies":[
-				{"algorithm": "algo", "operand":"devices", "value":"single", "operator":"="}
+				{"algorithm":"metric","operand":"devices","value":"Single","operator":"<="}
 				],"defaultAnswer": true,"nextID" : "1" 
 				},
 				{"value":"No",
 				"claferDependencies":[
-				{"algorithm": "algo", "operand":"devices", "value":"multiple", "operator":"="},
-				{"algorithm": "algo", "operand":"mode", "value":"folder", "operator":"="}
+				{"algorithm":"metric","operand":"fileMode","value":"Folder","operator":">="},
+				{"algorithm":"metric","operand":"devices","value":"Multiple","operator":">="}
 				],"nextID" : "-1"
 			}
 			]
@@ -22,12 +22,12 @@
 			"answers":[
 				{"value":"single response",
 				"claferDependencies":[
-				{"algorithm": "algo", "operand":"mode", "value":"file", "operator":"="}
+				{"algorithm":"metric","operand":"fileMode","value":"File","operator":"<="}
                 ],"defaultAnswer": true, "nextID" : "-1"
 				},
 				{"value":"multiple response",
 				"claferDependencies":[
-				{"algorithm": "algo", "operand":"mode", "value":"folder", "operator":"="}
+				{"algorithm":"metric","operand":"fileMode","value":"Folder","operator":">="}
 				],"nextID" : "-1"
 			}
             ]

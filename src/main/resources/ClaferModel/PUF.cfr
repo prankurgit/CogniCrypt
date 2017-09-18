@@ -1,40 +1,36 @@
 abstract Enum
 
 abstract Devices : Enum -> integer
-single : Devices = 1
-multiple: Devices = 2
+Single: Devices = 1
+Multiple: Devices = 2
 
-//enum file/folder mode
-abstract Mode : Enum -> integer
-file : Mode = 1
-folder : Mode = 2
+abstract FileMode : Enum -> integer
+File: FileMode = 1
+Folder: FileMode = 2
 
-abstract Algorithm
-	devices -> Devices
-	mode -> Mode
+abstract Metric
 	description -> string
-
-Hamming_Distance : Algorithm
-	[description = "hamming distance"]
-	[devices = single]
-//	[mode = file || mode = folder]
-
-//Shannon_Entropy : Algorithm
-	//[description = "Shannon Entropy"]
-
-Intra_HD : Algorithm
-	[description = "Intra Hamming Distance"]
-	[devices = single]
-	[mode = folder]
-
-Inter_HD : Algorithm
-	[description = "Inter Hamming Distance"]
-	[devices = multiple]
-	[mode = folder]
+	fileMode -> FileMode
+	devices -> Devices
 
 abstract Task
 	description -> string
 
+Hamming_Distance : Metric
+	[description = "hamming distance"]
+	[fileMode = File || fileMode = Folder]
+	[devices = Single]
+
+Intra_HD : Metric
+	[description = "Intra Hamming Distance"]
+	[fileMode = Folder]
+	[devices = Multiple]
+
+Inter_HD : Metric
+	[description = "Inter Hamming Distance"]
+	[fileMode = Folder]
+	[devices = Multiple]
+
 PUFToolkit : Task
 	[description = "Evaluation and Assessment of PUF responses"]
-	algo -> Algorithm
+	metric -> Metric

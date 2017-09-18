@@ -36,10 +36,10 @@
 			"additionalResources" : "src/main/resources/AdditionalResources/ABY"
 		},
 		{
-			"name": "PUF_Toolkit",
+			"name": "PUFToolkit",
 			"description": "Evaluation and Assessment of PUF responses",
 			"modelFile" : "src/main/resources/ClaferModel/PUF.js",
-			"xmlFile" : "src/main/resources/TaskDesc/PUFQuestions.json",
-			"additionalResources" : ""
+			"xmlFile" : "src/main/resources/TaskDesc/PUF.json",
+			"additionalResources" : "src/main/resources/AdditionalResources/PUF_jni"
 		}
 ]
