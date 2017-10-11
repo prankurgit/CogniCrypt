@@ -99,6 +99,31 @@ public class Output {
 	}
 }
 </xsl:if>
+
+<xsl:if test="//task[@description='PUFToolkit']">
+<xsl:result-document href="PUFToolkit.java">
+package <xsl:value-of select="//task/Package"/>; 
+import jni.toolkit;
+public class PUFToolkit {
+	public static void main(String [] args)
+	{
+		//some code out of xsl 
+		<xsl:if test="//task[@description='PUFToolkit']//metric[@type='Intra_HD']">
+		String [] Intra HD;
+		</xsl:if>
+		<xsl:if test="//task[@description='PUFToolkit']//metric[@type='Hamming_Distance']">
+		String [] Hammingdt;
+		</xsl:if>
+		<xsl:if test="//task/metric[@type='Inter_HD']">
+		String [] inter_directories = {"/home/prankur/code_seb/PUF_Toolkit/data/input",
+						"/home/prankur/code_seb/PUF_Toolkit/data/output"};
+		toolkit.inter_hd(inter_directories, "inter_hd");
+		</xsl:if>
+	}
+}
+</xsl:result-document>
+</xsl:if>
+
 <xsl:if test="//task[@description='SecurePassword']">
 
 <xsl:if test="//task/algorithm[@type='KeyDerivationAlgorithm']">

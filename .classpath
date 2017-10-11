@@ -39,5 +39,6 @@
 	<classpathentry kind="lib" path="lib/LongTermArchiving.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-2.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/claferchocoig.jar"/>
+	<classpathentry kind="lib" path="/home/prankur/code_seb/PUF_Toolkit/jni.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
