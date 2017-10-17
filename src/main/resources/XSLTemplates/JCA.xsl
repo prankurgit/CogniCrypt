@@ -107,14 +107,14 @@ import jni.toolkit;
 public class PUFToolkit {
 	public static void main(String [] args)
 	{
-		//some code out of xsl 
-		<xsl:if test="//task[@description='PUFToolkit']//metric[@type='Intra_HD']">
+		//some code out of xsl
+		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Intra_HD'">
 		String [] Intra HD;
 		</xsl:if>
-		<xsl:if test="//task[@description='PUFToolkit']//metric[@type='Hamming_Distance']">
+		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Hamming_Distance'">
 		String [] Hammingdt;
 		</xsl:if>
-		<xsl:if test="//task/metric[@type='Inter_HD']">
+		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Inter_HD'">
 		String [] inter_directories = {"/home/prankur/code_seb/PUF_Toolkit/data/input",
 						"/home/prankur/code_seb/PUF_Toolkit/data/output"};
 		toolkit.inter_hd(inter_directories, "inter_hd");
