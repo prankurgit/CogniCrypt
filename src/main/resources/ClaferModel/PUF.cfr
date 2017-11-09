@@ -16,15 +16,25 @@ abstract Metric
 abstract Task
 	description -> string
 
-Hamming_Distance : Metric
-	[description = "hamming distance"]
+Hamming_Weight : Metric
+	[description = "Hamming Weight"]
 	[fileMode = File || fileMode = Folder]
 	[devices = Single]
-
+	
+Shannon_Entropy : Metric
+	[description = "(Shannon) Entropy"]
+	[fileMode = File || fileMode = Folder]
+	[devices = Single]
+	
+Min_Entropy : Metric
+	[description = "Min Entropy"]
+	[fileMode = Folder]
+	[devices = Single]
+	
 Intra_HD : Metric
 	[description = "Intra Hamming Distance"]
 	[fileMode = Folder]
-	[devices = Multiple]
+	[devices = Single]
 
 Inter_HD : Metric
 	[description = "Inter Hamming Distance"]

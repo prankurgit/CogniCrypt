@@ -109,15 +109,41 @@ public class PUFToolkit {
 	{
 		//some code out of xsl
 		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Intra_HD'">
-		String [] Intra HD;
+			// give the absolute path of the directory on the current machine containing PUF responses
+			String intra_directory = "/home/prankur/code_seb/PUF_Toolkit/data/input";
+			String output_filename = "intra_hd";
+			// false - compact mode, true - minimal mode
+			boolean output_mode = false;
+			toolkit.intra_hd(intra_directory, output_filename, output_mode);
 		</xsl:if>
-		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Hamming_Distance'">
-		String [] Hammingdt;
+
+		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Hamming_Weight'">
+			boolean mode = false; // false = filemode, true = foldermode
+			String name = "/home/prankur/code_seb/PUF_Toolkit/pk"; //file or foldername on the current machine
+			String output_filename = "hammingwt";
+			toolkit.hammingwt(name, output_filename, mode);
 		</xsl:if>
+
+		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Shannon_Entropy'">
+			boolean mode = false; // false = filemode, true = foldermode
+			String name = "/home/prankur/code_seb/PUF_Toolkit/pk"; //file or foldername on the current machine
+			String output_filename = "Shannon_entropy";
+			toolkit.entropy(name, output_filename, mode);
+		</xsl:if>
+
+		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Min_Entropy'">
+			String name = "/home/prankur/code_seb/PUF_Toolkit/data/input"; //foldername on the current machine
+			String output_filename = "min_entropy";
+			toolkit.min_entropy(name, output_filename, true);
+		</xsl:if>
+
 		<xsl:if test="//task[@description='PUFToolkit']/element[@type='PUFToolkit']/Metric='Inter_HD'">
-		String [] inter_directories = {"/home/prankur/code_seb/PUF_Toolkit/data/input",
-						"/home/prankur/code_seb/PUF_Toolkit/data/output"};
-		toolkit.inter_hd(inter_directories, "inter_hd");
+			//the number of directories are bounded in [2,99]
+			// give the absolute path of the directories on the current machine containing PUF responses
+			String [] inter_directories = {"/home/prankur/code_seb/PUF_Toolkit/data/input",
+							"/home/prankur/code_seb/PUF_Toolkit/data/output"};
+			String output_filename = "inter_hd";
+			toolkit.inter_hd(inter_directories, output_filename);
 		</xsl:if>
 	}
 }
